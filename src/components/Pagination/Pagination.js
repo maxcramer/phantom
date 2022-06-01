@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Pagination.css";
+
 export const Pagination = ({ urlPerPage, totalUrls, paginate }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalUrls / urlPerPage); i++) {
@@ -8,7 +10,7 @@ export const Pagination = ({ urlPerPage, totalUrls, paginate }) => {
   return (
     <nav>
       {pageNumbers.map((number) => (
-        <li key={number}>
+        <li className="page_number" key={number}>
           <a onClick={() => paginate(number)} href="!#">
             {number}
           </a>
