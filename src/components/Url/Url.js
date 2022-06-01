@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Url.css";
 
-const Url = ({ data }) => {
-  console.log("URL", data);
+const Url = ({ setData }) => {
+  console.log("URL", setData);
   return (
     <ul>
-      {data.map((data) => (
+      {setData.map((data) => (
         <li key={data.id}>
           {data.id} {data.url}
         </li>

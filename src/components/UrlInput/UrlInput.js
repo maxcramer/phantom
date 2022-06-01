@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import "./UrlInput.css";
 
-const UrlInput = () => {
+const UrlInput = (props) => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ mode: "onTouched", defaultValues: { url: "https://" } });
+  } = useForm({ mode: "onTouched", defaultValues: { url: "http://www." } });
 
-  const onSubmit = (data) => console.log(data);
+  const [newUrl, setNewUrl] = useState();
+
+  function onSubmit(data, e) {
+    console.log(data);
+    e.preventDefault();
+    props.setData((prev) => prev.concat({ id: Date.now(), url: data.url }));
+  }
 
   return (
     <React.Fragment>
@@ -19,6 +25,7 @@ const UrlInput = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <h2>Validate URL</h2>
           <input
+            onChange={(e) => setNewUrl(e.target.value)}
             type="url"
             {...register("url", {
               required: { value: true, message: "URL is Required" },
