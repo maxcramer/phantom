@@ -131,12 +131,17 @@ function App() {
   const indexOfLastUrl = currentPage * urlPerPage;
   const indexOfFirstUrl = indexOfLastUrl - urlPerPage;
   const currentUrl = data.slice(indexOfFirstUrl, indexOfLastUrl);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="App">
       <h1>My App</h1>
       <Url data={currentUrl} />
-      <Pagination urlPerPage={urlPerPage} totalUrls={data.length} />
+      <Pagination
+        urlPerPage={urlPerPage}
+        totalUrls={data.length}
+        paginate={paginate}
+      />
     </div>
   );
 }
