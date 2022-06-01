@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Url from "./components/Url/Url";
 import Pagination from "./components/Pagination/Pagination";
+import UrlInput from "./components/UrlInput/UrlInput";
 
 import "./App.css";
 
@@ -110,21 +111,8 @@ const data = [
 ];
 
 function App() {
-  // const [url, setUrl] = useState([]);
-  // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [urlPerPage, setUrlPerPage] = useState(20);
-
-  // useEffect(() => {
-  //   const fetchUrls = async () => {
-  //     setLoading(true);
-  //     const res = await axios.get("data");
-  //     console.log(res);
-  //     setUrl(res.data);
-  //     setLoading(false);
-  //   };
-  //   fetchUrls();
-  // }, []);
+  const [urlPerPage] = useState(20);
 
   console.log(data);
 
@@ -136,6 +124,7 @@ function App() {
   return (
     <div className="App">
       <h1>My App</h1>
+      <UrlInput />
       <Url data={currentUrl} />
       <Pagination
         urlPerPage={urlPerPage}
