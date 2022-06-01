@@ -33,12 +33,14 @@ function App() {
     <div className="App">
       <UrlInput setData={setData} />
       <Url data={currentUrl} removeItem={removeItem} />
+      <button id="clear-all_btn" onClick={clearAll}>
+        Clear All
+      </button>
       <Pagination
         urlPerPage={urlPerPage}
         totalUrls={data.length}
         paginate={paginate}
       />
-      <button onClick={clearAll}>Clear All</button>
     </div>
   );
 }
