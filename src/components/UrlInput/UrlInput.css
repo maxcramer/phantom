@@ -1,8 +1,36 @@
-/* form {
-    background: lightgray;
+form {
+    background: #F3F1F1;
     width: 50%;
-    margin: 0 auto;
-    height: 12rem;
+    margin: 30px auto;
+    height: 15rem;
     border-radius: 10px;
     padding: 10px;
-} */
+    box-shadow: 5px 5px 4px #EAEAE9;
+    border: 1px solid #EAEAE9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text_input {
+    width: 40%;
+    margin: 1em;
+}
+
+.submit_btn {
+    width: 25%;
+    height: auto;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background-color: #16CC00;
+    color: white;
+    border: 1px solid white;
+    align-items: center;
+    margin: 10px;
+}
+
+span {
+    color: red;
+}

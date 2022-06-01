@@ -23,6 +23,7 @@ const UrlInput = (props) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <h2>Validate URL</h2>
           <input
+            className="text_input"
             onChange={(e) => setNewUrl(e.target.value)}
             type="url"
             {...register("url", {
@@ -33,8 +34,12 @@ const UrlInput = (props) => {
               },
             })}
           />
-          <input type="submit" value="Validate URL"></input>
           {errors.url && <span>{errors.url.message}</span>}
+          <input
+            className="submit_btn"
+            type="submit"
+            value="Validate URL"
+          ></input>
         </form>
       </section>
     </React.Fragment>

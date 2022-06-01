@@ -2,6 +2,10 @@ li {
     list-style: none;
 }
 
+ul {
+    padding-left: 0;
+}
+
 .url_item {
     border: 1px solid grey;
     border-radius: 4px;
@@ -22,4 +26,9 @@ img {
     height: 100%;
     float: right;
     right: 0;
+}
+
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
 }
