@@ -2,14 +2,12 @@ import React, { useState } from "react";
 
 import "./Url.css";
 
-const Url = ({ data }) => {
+const Url = ({ data, removeItem }) => {
   console.log("URL", data);
-
-  function handleRemove(e) {
-    this.setData((prevState) => ({
-      data: prevState.data.filter((data) => data !== e.target.value),
-    }));
-  }
+  // const removeItem = () => {
+  //   data.filter((data) => data.id !== data);
+  //   console.log(data);
+  // };
 
   return (
     <ul>
@@ -23,7 +21,7 @@ const Url = ({ data }) => {
               alt="Validated URL"
               title="Validated"
             />
-            <button type="button" onClick={handleRemove}>
+            <button type="button" onClick={() => removeItem(data.id)}>
               X
             </button>
           </div>

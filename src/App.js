@@ -19,10 +19,24 @@ function App() {
 
   const [newList, setNewList] = React.useState(data);
 
+  // function removeItem(e) {
+  //   var array = [...this.state.data];
+  //   var index = array.indexOf(e.target.value);
+  //   if (index !== -1) {
+  //     array.splice(index, 1);
+  //     this.setState({ data: array });
+  //   }
+  // }
+
+  const removeItem = (id) => {
+    const updatedData = data.filter((item) => item.id !== id);
+    setData(updatedData);
+  };
+
   return (
     <div className="App">
       <UrlInput setData={setData} />
-      <Url data={currentUrl} />
+      <Url data={currentUrl} removeItem={removeItem} />
       <Pagination
         urlPerPage={urlPerPage}
         totalUrls={data.length}
