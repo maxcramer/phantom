@@ -22,8 +22,16 @@ ul {
     box-shadow: 5px 5px 4px grey;
 }
 
-img {
-    height: 100%;
+.validation_delete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.image {
+    height: 40px;
     float: right;
     right: 0;
 }

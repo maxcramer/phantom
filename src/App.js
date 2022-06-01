@@ -17,15 +17,18 @@ function App() {
   const currentUrl = data.slice(indexOfFirstUrl, indexOfLastUrl);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const [newList, setNewList] = React.useState(data);
+
   return (
     <div className="App">
       <UrlInput setData={setData} />
-      <Url setData={currentUrl} />
+      <Url data={currentUrl} />
       <Pagination
         urlPerPage={urlPerPage}
         totalUrls={data.length}
         paginate={paginate}
       />
+      <button>Clear All</button>
     </div>
   );
 }
