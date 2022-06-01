@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import Url from "./components/Url";
+import Url from "./components/Url/Url";
+import Pagination from "./components/Pagination/Pagination";
 
 import "./App.css";
 
@@ -66,13 +67,53 @@ const data = [
     id: 15,
     url: "https://www.google.com/",
   },
+  {
+    id: 16,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 17,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 18,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 19,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 20,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 21,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 22,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 23,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 24,
+    url: "https://www.google.com/",
+  },
+  {
+    id: 25,
+    url: "https://www.google.com/",
+  },
 ];
 
 function App() {
   // const [url, setUrl] = useState([]);
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [urlPerPage, setUrlPerPage] = useState(10);
+  const [urlPerPage, setUrlPerPage] = useState(20);
 
   // useEffect(() => {
   //   const fetchUrls = async () => {
@@ -87,10 +128,15 @@ function App() {
 
   console.log(data);
 
+  const indexOfLastUrl = currentPage * urlPerPage;
+  const indexOfFirstUrl = indexOfLastUrl - urlPerPage;
+  const currentUrl = data.slice(indexOfFirstUrl, indexOfLastUrl);
+
   return (
     <div className="App">
       <h1>My App</h1>
-      <Url data={data} />
+      <Url data={currentUrl} />
+      <Pagination urlPerPage={urlPerPage} totalUrls={data.length} />
     </div>
   );
 }

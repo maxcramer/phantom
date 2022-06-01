@@ -1,13 +1,17 @@
 import React from "react";
 
+import "./Url.css";
+
 const Url = ({ data }) => {
   console.log("URL", data);
   return (
-    <div>
+    <ul>
       {data.map((data) => (
-        <li key={data.id}>{data.url}</li>
+        <li key={data.id}>
+          {data.id} {data.url}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
