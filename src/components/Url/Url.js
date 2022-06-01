@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import "./Url.css";
 
 const Url = ({ data, removeItem }) => {
-  console.log("URL", data);
-  // const removeItem = () => {
-  //   data.filter((data) => data.id !== data);
-  //   console.log(data);
-  // };
-
+  // SHOW INDIVIDUAL URL AS LIST
   return (
     <ul>
       {data.map((data) => (
