@@ -33,6 +33,10 @@ function App() {
     setData(updatedData);
   };
 
+  const clearAll = () => {
+    setData([]);
+  };
+
   return (
     <div className="App">
       <UrlInput setData={setData} />
@@ -42,7 +46,7 @@ function App() {
         totalUrls={data.length}
         paginate={paginate}
       />
-      <button>Clear All</button>
+      <button onClick={clearAll}>Clear All</button>
     </div>
   );
 }
