@@ -7,14 +7,12 @@ const UrlInput = (props) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({ mode: "onTouched", defaultValues: { url: "http://www." } });
 
   const [newUrl, setNewUrl] = useState();
 
   function onSubmit(data, e) {
-    console.log(data);
     e.preventDefault();
     props.setData((prev) => prev.concat({ id: Date.now(), url: data.url }));
   }
