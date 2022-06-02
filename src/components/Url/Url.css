@@ -9,7 +9,7 @@ ul {
 .url_item {
     border: 1px solid grey;
     border-radius: 4px;
-    width: 50%;
+    width: 575px;
     height: 25px;
     margin: 10px auto;
     text-align: left;
@@ -39,4 +39,14 @@ ul {
 a:hover {
     color: darkblue;
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .url_item {
+        width: 85%;
+    }
+
+    .validation_delete {
+        width: 25%;
+    }
 }
