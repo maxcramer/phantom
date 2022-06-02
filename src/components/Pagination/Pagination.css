@@ -12,7 +12,15 @@ nav {
     font-size: 20px;
 }
 
-a {
+#page_number_item {
     text-decoration: none;
     color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#page_number_item:hover {
+    color: #5A0380;
+    text-decoration: underline;
+    
 }

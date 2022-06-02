@@ -11,7 +11,7 @@ export const Pagination = ({ urlPerPage, totalUrls, paginate }) => {
     <nav>
       {pageNumbers.map((number) => (
         <li className="page_number" key={number}>
-          <a onClick={() => paginate(number)} href="!#">
+          <a id="page_number_item" onClick={() => paginate(number)} href="!#">
             {number}
           </a>
         </li>
