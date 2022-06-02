@@ -16,7 +16,12 @@ const Url = ({ data, removeItem }) => {
               alt="Validated URL"
               title="Validated"
             />
-            <button type="button" onClick={() => removeItem(data.id)}>
+            <button
+              type="button"
+              id="delete-item_btn"
+              title="Delete Item"
+              onClick={() => removeItem(data.id)}
+            >
               X
             </button>
           </div>
