@@ -50,6 +50,8 @@ form {
 
 span {
     color: red;
+    position: absolute;
+    top: 95px;
 }
 
 @media only screen and (max-width: 600px) {
