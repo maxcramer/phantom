@@ -16,6 +16,7 @@
   margin: 10px;
   border-bottom: 5px solid #BE0000;
   border-right: 5px solid #BE0000;
+  cursor: pointer;
 }
 
 #clear-all_btn:active {

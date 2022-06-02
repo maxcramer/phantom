@@ -39,6 +39,7 @@ form {
     border-right: 5px solid #13AD00;
     position: absolute;
     top: 180px;
+    cursor: pointer;
 }
 
 .submit_btn:active {
@@ -52,6 +53,7 @@ span {
     color: red;
     position: absolute;
     top: 95px;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
