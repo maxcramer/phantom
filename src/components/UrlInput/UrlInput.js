@@ -13,9 +13,14 @@ const UrlInput = (props) => {
 
   // ADD A NEW URL
   const [newUrl, setNewUrl] = useState();
+  const [urlArr, setUrlArr] = useState([]);
   function onSubmit(data, e) {
     e.preventDefault();
     props.setData((prev) => prev.concat({ id: Date.now(), url: data.url }));
+
+    urlArr.push(data.url);
+    console.log(urlArr);
+    localStorage.setItem("url", urlArr);
   }
 
   return (
