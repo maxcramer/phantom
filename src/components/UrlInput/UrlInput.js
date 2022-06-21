@@ -20,7 +20,7 @@ const UrlInput = (props) => {
 
     urlArr.push(data.url);
     console.log(urlArr);
-    localStorage.setItem("url", urlArr);
+    localStorage.setItem("url", JSON.stringify(urlArr));
   }
 
   return (
