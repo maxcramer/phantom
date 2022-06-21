@@ -4,6 +4,8 @@ import "./Url.css";
 
 const Url = ({ data, removeItem }) => {
   // SHOW INDIVIDUAL URL AS LIST
+  let urls = localStorage.getItem("url");
+  console.log("This should be an array", urls); // this is an array of urls
   return (
     <ul>
       {data.map((data) => (

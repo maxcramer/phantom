@@ -18,9 +18,9 @@ const UrlInput = (props) => {
     e.preventDefault();
     props.setData((prev) => prev.concat({ id: Date.now(), url: data.url }));
 
-    urlArr.push(data.url);
+    urlArr.push({ url: data.url, id: Date.now() });
     console.log(urlArr);
-    localStorage.setItem("url", JSON.stringify(urlArr));
+    localStorage.setItem("url", JSON.stringify({ url: urlArr }));
   }
 
   return (
