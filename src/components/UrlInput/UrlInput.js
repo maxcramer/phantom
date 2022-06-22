@@ -22,7 +22,8 @@ const UrlInput = (props) => {
     console.log("urlArr: ", urlArr);
     localStorage.setItem("urlArray", JSON.stringify({ newUrlArray: urlArr }));
   }
-
+  var newUrlArray = [];
+  localStorage.setItem("urlArray", JSON.stringify(urlArr));
   return (
     <React.Fragment>
       <section>

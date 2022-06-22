@@ -20,8 +20,9 @@ function App() {
 
   // DELETE SINGLE ITEM FROM LIST
   const removeItem = (id) => {
-    const updatedData = data.filter((item) => item.id !== id);
+    const updatedData = data.filter((url) => url.id !== id);
     setData(updatedData);
+    // localStorage.removeItem(id); // set up remove from local storage
   };
 
   // DELETE ALL ITEMS FROM LIST
