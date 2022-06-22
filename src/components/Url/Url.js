@@ -4,13 +4,15 @@ import "./Url.css";
 
 const Url = ({ data, removeItem }) => {
   // SHOW INDIVIDUAL URL AS LIST
-  let urls = localStorage.getItem("url");
-  console.log("This should be an array", urls); // this is an array of urls
+  let urls = JSON.parse(localStorage.getItem("url"));
+  console.log("URLS: ", urls);
+  // var urlList = JSON.parse(urls);
+  // console.log("This should be an array", urlList); // this is an array of urls
   return (
     <ul>
-      {data.map((data) => (
-        <li className="url_item" key={data.id}>
-          <a href={data.url}>{data.url}</a>
+      {data.map((url) => (
+        <li className="url_item" key={url.id}>
+          <a href={url.url}>{url.url}</a>
           <div className="validation_delete">
             <img
               className="image"

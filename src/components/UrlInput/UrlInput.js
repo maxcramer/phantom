@@ -13,14 +13,21 @@ const UrlInput = (props) => {
 
   // ADD A NEW URL
   const [newUrl, setNewUrl] = useState();
-  const [urlArr, setUrlArr] = useState([]);
+  // const [urlArr, setUrlArr] = useState([]);
   function onSubmit(data, e) {
     e.preventDefault();
     props.setData((prev) => prev.concat({ id: Date.now(), url: data.url }));
 
-    urlArr.push({ url: data.url, id: Date.now() });
-    console.log(urlArr);
-    localStorage.setItem("url", JSON.stringify({ url: urlArr }));
+    var new_data = document.getElementById("input").value;
+
+    if (localStorage.getItem("data") === null) {
+      localStorage.setItem("data", "[]");
+      console.log("new data");
+    }
+
+    // urlArr.push({ url: data.url, id: Date.now() });
+    // console.log(urlArr);
+    // localStorage.setItem("url", JSON.stringify({ url: urlArr }));
   }
 
   return (
@@ -30,6 +37,7 @@ const UrlInput = (props) => {
           <h2>Validate URL</h2>
           <input
             className="text_input"
+            id="input"
             onChange={(e) => setNewUrl(e.target.value)}
             type="url"
             {...register("url", {
